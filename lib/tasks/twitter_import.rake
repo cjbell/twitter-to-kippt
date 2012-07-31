@@ -4,9 +4,12 @@ namespace :ttk do
   task :import_to_kippt => :environment do
     
     User.authorised.each do |user|
-      
+    
       user.twitter
       kippt = user.kippt
+      
+      p kippt.to_json
+      
       tweets = Twitter.favorites(:since_id => user.last_tweet, :count => 25, :include_entities => true)
       
       last_id = user.last_tweet
@@ -16,10 +19,14 @@ namespace :ttk do
         
         tweet.expanded_urls.each do |url|
           # Add this to the users Kippt
+          p "Adding a clip: "
+          
           clip = kippt.clips.build
           clip.url = url
           clip.notes = "#{ tweet.text } - #{ tweet.user.name }"
           clip.save
+          
+          p "Clip saved: #{ clip }"
         end
         
         last_id = tweet.id
