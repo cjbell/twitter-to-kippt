@@ -7,7 +7,7 @@ namespace :ttk do
       
       user.twitter
       kippt = user.kippt
-      tweets = Twitter.favorites(:since_id => user.last_tweet, :count => 100, :include_entities => true)
+      tweets = Twitter.favorites(:since_id => user.last_tweet, :count => 25, :include_entities => true)
       
       last_id = user.last_tweet
       tweets.each do |tweet|
