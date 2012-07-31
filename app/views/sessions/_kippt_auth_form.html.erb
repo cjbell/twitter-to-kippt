@@ -1,0 +1,11 @@
+<%= form_tag(auth_kipt_create_path) do %>
+  <div>
+    <%= label_tag(:kippt_username, "Kippt Username") %>
+    <%= text_field_tag(:kippt_username) %>
+  </div>
+  <div>
+    <%= label_tag(:kippt_password, "Kippt Password") %>
+    <%= password_field_tag(:kippt_password) %>
+  </div>
+  <%= submit_tag("Authenticate with Kippt") %>
+<% end %>

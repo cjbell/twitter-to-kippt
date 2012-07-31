@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  twitter_uid: MyString
+  twitter_username: MyString
+  kippt_username: MyString
+  twitter_token: MyString
+  kippt_token: MyString
+  last_tweet_id: 1
+
+two:
+  twitter_uid: MyString
+  twitter_username: MyString
+  kippt_username: MyString
+  twitter_token: MyString
+  kippt_token: MyString
+  last_tweet_id: 1

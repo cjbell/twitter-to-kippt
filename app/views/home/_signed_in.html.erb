@@ -1,0 +1,14 @@
+<h1>Hi, <%= current_user.twitter_username %></h1>
+
+<% if !current_user.kippt_authorized? %>
+  <p>It looks like you haven't authorised us for use with your Kippt account yet.</p> 
+  <p><%= link_to "Authorise Kippt", auth_kipt_path %></p>
+  
+<% else %>
+  <p>The last time we synched your favourites was: <%= current_user.last_sync %> </p>
+<% end %>
+
+<p>
+  <%= link_to "Stop this and delete my account please", delete_account_path %><br />
+  <%= link_to "Sign out", "/signout" %>
+</p>

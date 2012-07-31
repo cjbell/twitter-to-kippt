@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter Favourites to Kippt Inbox - Automagically!</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="wrapper">
+    
+    <% if flash[:warning] or flash[:notice] %>
+      <div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+        <%= flash[:warning] || flash[:notice] %>
+      </div>
+    <% end %>
+    
+    <%= yield %>
+    <footer>
+      <p>A little thing made by <%= link_to "cjbell", "http://cjbell.co" %></p>
+    </footer>
+  </div>
+</body>
+</html>
