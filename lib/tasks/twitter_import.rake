@@ -10,10 +10,12 @@ namespace :ttk do
       
       p twitter.to_json
       
-      tweets = twitter.favorites(:since_id => user.last_tweet, :count => 25, :include_entities => true)
+      tweets = twitter.favorites(:since_id => user.last_tweet.to_i, :count => 25, :include_entities => true)
+      
+      p "Got #{ tweets.length } tweets. Last tweet_id = #{ user.last_tweet }"
       
       last_id = user.last_tweet
-      tweets.each do |tweet|
+      tweets.reverse.each do |tweet|
         # Get each URL in this tweet
         hashtags = tweet.hashtags.map(&:text).join(', ')
         
