@@ -8,7 +8,7 @@ namespace :ttk do
       twitter = user.twitter
       kippt = user.kippt
       
-      p kippt.to_json
+      p twitter.to_json
       
       tweets = twitter.favorites(:since_id => user.last_tweet, :count => 25, :include_entities => true)
       
