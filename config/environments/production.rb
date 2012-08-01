@@ -64,4 +64,7 @@ TwitterToKippt::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  
+  ENV["TWITTER_KEY"] = "zUivdHE2aU9SksEan2PjA"
+  ENV["TWITTER_SECRET"] = "ODx4gazgBlTnzUuMg3BG4TGti5ezbyUPZi27H4YH40"
 end
