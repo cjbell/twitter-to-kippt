@@ -50,8 +50,12 @@ class User < ActiveRecord::Base
     return "N/A" if self.time_of_last_sync.nil?
   end
   
-  def kippt_list
-    
+  def current_kippt_list
+    if !self.kippt_list_id.nil?
+      list = self.kippt.lists[self.kippt_list_id]
+      return list.title unless list.nil? 
+    end
+    return "Inbox"  
   end
   
   def delete_account

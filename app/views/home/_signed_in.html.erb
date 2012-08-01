@@ -5,8 +5,10 @@
   <p><%= link_to "Authorise Kippt", auth_kipt_path %></p>
   
 <% else %>
-  <p>The last time we synched your favourites to Kippt was: <%= current_user.last_sync %> </p>
-  
+  <p>
+    The last time we synched your favourites to Kippt was: <strong><%= current_user.last_sync %></strong>. Syncing your favourites to the list <strong><%= current_user.current_kippt_list %></strong>
+  </p>
+
   <p>
     <%= link_to "Change the list where my Kippt's get saved", change_list_path %>
   </p>
