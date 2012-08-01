@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120731135044) do
+ActiveRecord::Schema.define(:version => 20120801090148) do
 
   create_table "users", :force => true do |t|
     t.string   "twitter_uid"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20120731135044) do
     t.string   "kippt_username"
     t.string   "twitter_token"
     t.string   "kippt_token"
-    t.integer  "last_tweet_id"
+    t.string   "last_tweet_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.string   "twitter_secret"
