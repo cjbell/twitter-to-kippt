@@ -5,7 +5,7 @@
   <p><%= link_to "Authorise Kippt", auth_kipt_path %></p>
   
 <% else %>
-  <p>The last time we synched your favourites was: <%= current_user.last_sync %> </p>
+  <p>The last time we synched your favourites to Kippt was: <%= current_user.last_sync.strftime("%D %R") %> </p>
 <% end %>
 
 <p>
