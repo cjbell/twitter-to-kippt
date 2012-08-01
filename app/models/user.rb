@@ -4,7 +4,19 @@ class User < ActiveRecord::Base
   scope :authorised, lambda { where("kippt_token IS NOT NULL AND kippt_username IS NOT NULL AND twitter_token IS NOT NULL AND twitter_secret IS NOT NULL") }
   
   def self.from_omniauth(auth)
-    where(:twitter_uid => auth["uid"]).first || create_from_omniauth(auth)
+    user = where(:twitter_uid => auth["uid"]).first
+    
+    if !user.nil?
+      p auth.to_json
+      
+      user.twitter_token = auth["credentials"]["token"]
+      user.twitter_secret = auth["credentials"]["secret"]
+      user.save
+      
+      return user
+    end
+    
+    create_from_omniauth(auth)
   end
 
   def self.create_from_omniauth(auth)
