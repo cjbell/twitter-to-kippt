@@ -9,6 +9,7 @@ TwitterToKippt::Application.routes.draw do
   match 'destroy', to: 'home#delete_account', as: 'delete_account'
   match 'auth_kipt', to: 'sessions#auth_kippt', as: 'auth_kipt'
   post 'auth_kipt/postback', to: 'sessions#auth_kipt_postback', as: 'auth_kipt_create'
+  match 'change-list', to: 'home#change_kippt_list', as: 'change_list'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
