@@ -34,7 +34,4 @@ TwitterToKippt::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  
-  ENV["TWITTER_KEY"] = "Q9W3Q6mYIRxsreUbwPTkLw"
-  ENV["TWITTER_SECRET"] = "J3W5QiGeuULP6HP8iDTe8EsQCQJyK0V4Fx2qlBUMEw"
 end
