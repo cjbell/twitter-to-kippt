@@ -149,5 +149,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3
   thin
-  twitter
+  twitter (~> 2.2.2)
   uglifier (>= 1.0.3)
