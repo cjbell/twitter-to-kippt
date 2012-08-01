@@ -28,6 +28,7 @@ class SessionsController < ApplicationController
       end
     end
     
+    flash[:notice] = 'Invalid credentials'
     render :action => "auth_kippt" 
   end
 end
