@@ -1,0 +1,13 @@
+<h1>Change where your Kippt's get saved</h1>
+<p>
+  If you wish to change the list your new Kippt's go to, please select it here. (Defaults to Inbox)
+</p>
+
+<%= form_tag update_list_path do %>
+  <%= select("user", "kippt_list_id", @lists.collect { |l| [l.title, l.id] }, :prompt => 'Select List', :selected => current_user.kippt_list_id ) %>
+  <%= submit_tag("Update") %>
+<% end %>
+
+<p>
+  <%= link_to "Go back", root_path %>
+</p>

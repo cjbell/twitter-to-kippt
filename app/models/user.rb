@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
-  attr_accessible :kippt_token, :kippt_username, :last_tweet_id, :twitter_token, :twitter_secret, :twitter_uid, :twitter_username, :twitter_avatar, :time_of_last_sync
+  attr_accessible :kippt_token, :kippt_username, :last_tweet_id, :twitter_token, :twitter_secret, :twitter_uid, :twitter_username, :twitter_avatar, :time_of_last_sync, :kippt_list_id
   
   scope :authorised, lambda { where("kippt_token IS NOT NULL AND kippt_username IS NOT NULL AND twitter_token IS NOT NULL AND twitter_secret IS NOT NULL") }
   
   def self.from_omniauth(auth)
-    where(auth.slice("twitter_uid")).first || create_from_omniauth(auth)
+    where(:twitter_uid => auth["uid"]).first || create_from_omniauth(auth)
   end
 
   def self.create_from_omniauth(auth)
@@ -48,6 +48,10 @@ class User < ActiveRecord::Base
   def last_sync
     self.time_of_last_sync.strftime("%D %R") unless self.time_of_last_sync.nil?
     "N/A" if self.time_of_last_sync.nil?
+  end
+  
+  def kippt_list
+    
   end
   
   def delete_account

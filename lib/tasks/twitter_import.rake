@@ -22,6 +22,7 @@ namespace :ttk do
           p "Adding a clip: "
           
           clip = kippt.clips.build
+          clip.list = user.kippt_list_id
           clip.url = url
           clip.notes = "#{ tweet.text } - #{ tweet.user.name }"
           clip.save

@@ -6,6 +6,11 @@
   
 <% else %>
   <p>The last time we synched your favourites to Kippt was: <%= current_user.last_sync %> </p>
+  
+  <p>
+    <%= link_to "Change the list where my Kippt's get saved", change_list_path %>
+  </p>
+  
 <% end %>
 
 <p>
