@@ -46,8 +46,8 @@ class User < ActiveRecord::Base
   end
   
   def last_sync
-    self.time_of_last_sync.strftime("%D %R") unless self.time_of_last_sync.nil?
-    "N/A" if self.time_of_last_sync.nil?
+    return self.time_of_last_sync.strftime("%D %R") unless self.time_of_last_sync.nil?
+    return "N/A" if self.time_of_last_sync.nil?
   end
   
   def kippt_list
