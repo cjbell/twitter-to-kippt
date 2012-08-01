@@ -28,12 +28,6 @@ class User < ActiveRecord::Base
   end
   
   def twitter
-    Twitter.configure do |config|
-      config.consumer_key = ENV["TWITTER_KEY"]
-      config.consumer_secret = ENV["TWITTER_SECRET"]
-      config.oauth_token = self.twitter_token
-      config.oauth_token_secret = self.twitter_secret
-    end
     Twitter::Client.new(:oauth_token => self.twitter_token, :oauth_token_secret => self.twitter_secret)
   end
   
