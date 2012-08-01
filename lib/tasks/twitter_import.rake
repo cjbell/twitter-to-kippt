@@ -5,12 +5,12 @@ namespace :ttk do
     
     User.authorised.each do |user|
     
-      user.twitter
+      twitter = user.twitter
       kippt = user.kippt
       
       p kippt.to_json
       
-      tweets = Twitter.favorites(:since_id => user.last_tweet, :count => 25, :include_entities => true)
+      tweets = twitter.favorites(:since_id => user.last_tweet, :count => 25, :include_entities => true)
       
       last_id = user.last_tweet
       tweets.each do |tweet|

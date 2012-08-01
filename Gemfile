@@ -29,4 +29,4 @@ gem "kippt"
 gem 'omniauth'
 gem 'omniauth-twitter'
 
-gem 'twitter', '~> 2.2.2'
+gem 'twitter', '2.2.2'

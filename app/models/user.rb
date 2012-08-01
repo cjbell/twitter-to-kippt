@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
       config.oauth_token = self.twitter_token
       config.oauth_token_secret = self.twitter_secret
     end
-    Twitter
+    Twitter::Client.new(:oauth_token => self.twitter_token, :oauth_token_secret => self.twitter_secret)
   end
   
   def kippt
